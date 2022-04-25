@@ -20,6 +20,15 @@ public class Sistema {
         System.out.println("2. Consultar un libro por id");
         System.out.println("3. Eliminar un libro por id");
         System.out.println("Proximamente mas");
+        
+        Scanner entrada = new Scanner(System.in);
+        int respuesta;
+        try {
+            System.out.println("Elija una opcion: ");
+            respuesta = Integer.parseInt(entrada.nextLine);
+        } catch (NumberFormatException error){
+            System.out.println("Eso no es un numero");
+        }
     }
     
     
