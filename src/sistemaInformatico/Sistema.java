@@ -1,5 +1,7 @@
 package sistemaInformatico;
 
+import java.util.Scanner;
+
 /**
  * En esta clase se creara el menu y sera al aplicacion inicial
  *
@@ -22,12 +24,16 @@ public class Sistema {
         System.out.println("Proximamente mas");
         
         Scanner entrada = new Scanner(System.in);
-        int respuesta;
+        int respuesta = 0;
         try {
             System.out.println("Elija una opcion: ");
-            respuesta = Integer.parseInt(entrada.nextLine);
+            respuesta = Integer.parseInt(entrada.nextLine());
         } catch (NumberFormatException error){
             System.out.println("Eso no es un numero");
+        }
+        
+        switch (respuesta){
+            
         }
     }
     
