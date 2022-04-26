@@ -1,5 +1,6 @@
 package sistemaInformatico;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -17,6 +18,7 @@ public class Sistema {
      * @param persona la cual trabajara con el menu
      */
     public static void menu(Persona persona) {
+        Almacen almacen = new Almacen();
         System.out.println("Bienvenido/a " + persona.getNombre() + ", ¿que te apetece hacer?");
         System.out.println("1. Consultar un libro por nombre");
         System.out.println("2. Consultar un libro por id");
@@ -33,7 +35,16 @@ public class Sistema {
         }
         
         switch (respuesta){
-            
+            case 1:
+                String nombre;
+                Iterator<Persona> iterador = almacen.getAlmacenPersonas().iterator();
+                while (iterador.hasNext()) {
+                    if (iterador.next().equals(persona)){
+                        nombre = entrada.nextLine();
+                        Libro libro = iterador.next().buscarLibroNombre(nombre, almacen.getAlmacenLibros());
+                        System.out.println(libro.toString());
+                    }
+                }
         }
     }
     

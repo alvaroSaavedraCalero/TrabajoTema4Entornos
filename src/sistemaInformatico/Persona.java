@@ -108,16 +108,33 @@ public class Persona {
     
     
     /**
-     * Metodo para buscar un libro en el sistema.
+     * Metodo para buscar un libro a traves del Id en el sistema.
      * @param id del Libro para buscar.
      * @param almacenLibros donde deberia encontrarse el libro.
      * @return Libro con el id pasado por parametro.
      */
-    public Libro buscarLibro(int id, ArrayList<Libro> almacenLibros){
+    public Libro buscarLibroId(int id, ArrayList<Libro> almacenLibros){
         Libro retorno = null;
         Iterator<Libro> iterador = almacenLibros.iterator();
         while (iterador.hasNext()) {
             if (iterador.next().getIdLibro() == id){
+                retorno = iterador.next();
+            }
+        }
+        return retorno;
+    }
+    
+    /**
+     * Metodo para buscar un libro a traves del Nombre en el sistema.
+     * @param nombre
+     * @param almacenLibros
+     * @return Libro con el nombre pasado por parametro
+     */
+    public Libro buscarLibroNombre(String nombre, ArrayList<Libro> almacenLibros){
+        Libro retorno = null;
+        Iterator<Libro> iterador = almacenLibros.iterator();
+        while (iterador.hasNext()) {
+            if (iterador.next().getNombre().equals(nombre)){
                 retorno = iterador.next();
             }
         }
